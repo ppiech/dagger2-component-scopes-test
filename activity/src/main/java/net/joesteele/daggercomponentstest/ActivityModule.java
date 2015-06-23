@@ -8,6 +8,8 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 
+import java.util.Random;
+
 import javax.inject.Named;
 
 import dagger.Module;
@@ -29,7 +31,7 @@ public class ActivityModule {
         .build();
   }
 
-    @Provides @ActivityScope @Named("test") Object provideTest() {
-        return new Object();
+    @Provides @ActivityScope @Named("activity") String provideActivityString() {
+        return "activity " + new Random(System.currentTimeMillis()).nextInt();
     }
 }

@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.squareup.okhttp.OkHttpClient;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -13,4 +14,5 @@ import dagger.Component;
 public interface AppComponent {
   Application app();
   OkHttpClient httpClient();
+  @Named("app") String appString();
 }

@@ -10,6 +10,7 @@ import javax.inject.Named;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -27,8 +28,12 @@ public class MainActivity extends Activity {
     Picasso picasso;
 
     @Inject
-    @Named("test")
-    Object test;
+    @Named("app")
+    String app;
+
+    @Inject
+    @Named("activity")
+    String activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,10 @@ public class MainActivity extends Activity {
                         .appComponent(((AppProvider) getApplicationContext()).appComponent()).build();
 
         component.inject(this);
+
+        Log.d("activity", app);
+        Log.d("activity", activity);
+
 
         ImageView image = new ImageView(this);
         image.setLayoutParams(new LayoutParams(MATCH_PARENT, MATCH_PARENT));

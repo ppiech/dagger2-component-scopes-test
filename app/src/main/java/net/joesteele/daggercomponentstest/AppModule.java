@@ -2,6 +2,9 @@ package net.joesteele.daggercomponentstest;
 
 import android.app.Application;
 
+import java.util.Random;
+
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -21,5 +24,10 @@ public final class AppModule {
   @Provides @AppScope
   Application provideApplication() {
     return app;
+  }
+
+
+  @Provides @AppScope @Named("app") String provideAppString() {
+    return "app " + new Random(System.currentTimeMillis()).nextInt();
   }
 }
