@@ -11,7 +11,7 @@ buildscript {
 }
 
 apply plugin: 'android-sdk-manager'
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
 android {
@@ -19,6 +19,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
+        applicationId "net.joesteele.daggercomponentstest"
         minSdkVersion 15
         targetSdkVersion 21
         versionCode 1
@@ -27,6 +28,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -39,9 +41,10 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':app')
+    compile project(':activity')
     compile 'com.android.support:appcompat-v7:21.0.3'
 
-    compile project(':app')
     compile 'com.google.dagger:dagger:2.0'
     apt 'com.google.dagger:dagger-compiler:2.0'
     provided 'org.glassfish:javax.annotation:10.0-b28'

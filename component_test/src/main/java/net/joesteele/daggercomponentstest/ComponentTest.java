@@ -6,7 +6,7 @@ import android.content.Context;
 /**
  * Created by joesteele on 2/15/15.
  */
-public class ComponentTest extends Application {
+public class ComponentTest extends Application implements AppProvider {
   private ComponentTestComponent component;
 
   @Override public void onCreate() {
@@ -26,5 +26,9 @@ public class ComponentTest extends Application {
 
   public static ComponentTest app(Context context) {
     return (ComponentTest) context.getApplicationContext();
+  }
+
+  public AppComponent appComponent() {
+      return component;
   }
 }
