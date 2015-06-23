@@ -10,7 +10,7 @@ public class ComponentTest extends Application {
   private AppComponent component;
 
   @Override public void onCreate() {
-    component = Dagger_AppComponent.Initializer.buildAndInject(this);
+    component = DaggerAppComponent.Initializer.buildAndInject(this);
   }
 
   public static AppComponent component(Context context) {

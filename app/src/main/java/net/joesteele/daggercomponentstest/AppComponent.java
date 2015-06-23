@@ -16,7 +16,7 @@ public interface AppComponent {
 
   final static class Initializer {
     static AppComponent buildAndInject(ComponentTest app) {
-      AppComponent component = Dagger_AppComponent.builder()
+      AppComponent component = DaggerAppComponent.builder()
           .appModule(new AppModule(app))
           .build();
       component.inject(app);
