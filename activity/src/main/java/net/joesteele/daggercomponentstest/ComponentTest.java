@@ -20,7 +20,7 @@ public class ComponentTest extends Application {
             .build();
   }
 
-  public static AppComponent component(Context context) {
+  public static ComponentTestComponent component(Context context) {
     return app(context).component;
   }
 
