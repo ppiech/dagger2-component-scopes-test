@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
   private static final String IMAGE_URL = "http://i.ytimg.com/vi/oK_XtfXPkqw/maxresdefault.jpg";
 
   @Inject
-  ComponentTest application;
+  Application application;
 
   @Inject Picasso picasso;
 

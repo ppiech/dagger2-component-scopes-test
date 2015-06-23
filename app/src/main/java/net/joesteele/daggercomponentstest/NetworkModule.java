@@ -21,7 +21,7 @@ import retrofit.client.OkClient;
 public final class NetworkModule {
   static final int DISK_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
 
-  @Provides @Singleton OkHttpClient provideOkHttpClient(ComponentTest app) {
+  @Provides @Singleton OkHttpClient provideOkHttpClient(Application app) {
     return createOkHttpClient(app);
   }
 

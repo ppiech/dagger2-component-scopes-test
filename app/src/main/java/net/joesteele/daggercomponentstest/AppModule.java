@@ -1,5 +1,7 @@
 package net.joesteele.daggercomponentstest;
 
+import android.app.Application;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -10,13 +12,14 @@ import dagger.Provides;
  */
 @Module
 public final class AppModule {
-  private final ComponentTest app;
+  private final Application app;
 
-  public AppModule(ComponentTest app) {
+  public AppModule(Application app) {
     this.app = app;
   }
 
-  @Provides @Singleton ComponentTest provideApplication() {
+  @Provides @Singleton
+  Application provideApplication() {
     return app;
   }
 }

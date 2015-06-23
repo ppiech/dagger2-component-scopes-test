@@ -1,5 +1,6 @@
 package net.joesteele.daggercomponentstest;
 
+import android.app.Application;
 import android.net.Uri;
 import android.util.Log;
 
@@ -17,7 +18,7 @@ import dagger.Provides;
  */
 @Module
 public class ActivityModule {
-  @Provides @ActivityScope Picasso providePicasso(ComponentTest app, OkHttpClient client) {
+  @Provides @ActivityScope Picasso providePicasso(Application app, OkHttpClient client) {
     return new Picasso.Builder(app)
         .downloader(new OkHttpDownloader(client))
         .listener(new Picasso.Listener() {

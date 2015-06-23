@@ -1,5 +1,7 @@
 package net.joesteele.daggercomponentstest;
 
+import android.app.Application;
+
 import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Singleton;
@@ -9,19 +11,6 @@ import dagger.Component;
 @Singleton
 @Component(modules = {AppModule.class, NetworkModule.class})
 public interface AppComponent {
-  ComponentTest app();
+  Application app();
   OkHttpClient httpClient();
-
-  void inject(ComponentTest app);
-
-  final static class Initializer {
-    static AppComponent buildAndInject(ComponentTest app) {
-      AppComponent component = DaggerAppComponent.builder()
-          .appModule(new AppModule(app))
-          .build();
-      component.inject(app);
-      return component;
-    }
-    private Initializer() {}
-  }
 }
