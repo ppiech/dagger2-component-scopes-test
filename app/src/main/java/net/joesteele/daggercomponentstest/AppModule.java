@@ -18,7 +18,7 @@ public final class AppModule {
     this.app = app;
   }
 
-  @Provides @Singleton
+  @Provides @AppScope
   Application provideApplication() {
     return app;
   }

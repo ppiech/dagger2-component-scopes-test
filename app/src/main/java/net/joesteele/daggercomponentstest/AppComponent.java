@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
-@Singleton
+@AppScope
 @Component(modules = {AppModule.class, NetworkModule.class})
 public interface AppComponent {
   Application app();
