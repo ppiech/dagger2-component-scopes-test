@@ -27,8 +27,7 @@ public class ServiceTest extends Service {
     public void onCreate() {
         super.onCreate();
 
-        ServiceComponent component = DaggerServiceComponent.builder()
-                .appComponent(((AppProvider) getApplicationContext()).appComponent()).build();
+        ServiceComponent component = ((ServiceComponentProvider)getApplication()).getServiceComponent();
 
         component.inject(this);
 
@@ -38,6 +37,8 @@ public class ServiceTest extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
+        super.onStartCommand(intent, flags, startId);
+        stopSelf();
+        return START_NOT_STICKY;
     }
 }

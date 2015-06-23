@@ -1,1 +1,1 @@
-include ':app', ':activity', ":service", ":component_test"
+include ':app', ':activity', ":service", ":feature", ":component_test"
