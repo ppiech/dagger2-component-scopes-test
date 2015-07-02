@@ -7,20 +7,16 @@ import android.content.Intent;
 /**
  * Created by joesteele on 2/15/15.
  */
-public class ComponentTest extends Application implements AppProvider, ServiceComponentProvider {
+public class ComponentTest extends Application implements AppComponentProvider {
     private ComponentTestComponent component;
 
     @Override
     public void onCreate() {
         component = DaggerComponentTestComponent.builder()
-                .appComponent(DaggerAppComponent.builder()
-                    .appModule(new AppModule(this))
-                    .build())
+                .appModule(new AppModule(this))
                 .build();
 
-        FeatureTest featureTest;
-        component.featureComponent();
-
+        component.featureTest().onApplicationCreated();
         startService(new Intent().setClass(this, ServiceTest.class));
     }
 
@@ -36,8 +32,4 @@ public class ComponentTest extends Application implements AppProvider, ServiceCo
         return component;
     }
 
-    @Override
-    public ServiceComponent getServiceComponent() {
-        return component.serviceComponent();
-    }
 }

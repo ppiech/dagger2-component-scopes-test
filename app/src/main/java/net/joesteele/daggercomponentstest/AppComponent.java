@@ -1,15 +1,13 @@
 package net.joesteele.daggercomponentstest;
 
+import javax.inject.Named;
+
 import android.app.Application;
 
 import com.squareup.okhttp.OkHttpClient;
 
-import javax.inject.Named;
-import javax.inject.Singleton;
-
 import dagger.Component;
 
-@AppScope
 @Component(modules = {AppModule.class, NetworkModule.class})
 public interface AppComponent {
   Application app();

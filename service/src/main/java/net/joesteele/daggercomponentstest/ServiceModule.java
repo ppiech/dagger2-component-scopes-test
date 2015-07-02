@@ -18,7 +18,7 @@ import dagger.Provides;
 @Module
 public class ServiceModule {
 
-    @Provides @ServiceScope @Named("service") String provideServiceString() {
+    @Provides @AppScope @Named("service") String provideServiceString() {
         return "service " + new Random(System.currentTimeMillis()).nextInt();
     }
 }

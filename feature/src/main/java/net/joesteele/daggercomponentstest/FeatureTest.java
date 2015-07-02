@@ -11,7 +11,7 @@ public class FeatureTest {
     String service;
 
     @Inject
-    public FeatureTest(@Named("app") String app/*, @Named("service") String service*/) { // Cannot access ServicesComponent: boo!
+    public FeatureTest(@Named("app") String app, @Named("service") String service) {
         this.app = app;
         this.service = service;
     }

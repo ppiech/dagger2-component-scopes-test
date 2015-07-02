@@ -1,18 +1,21 @@
 package net.joesteele.daggercomponentstest;
 
+import android.app.Service;
+
 import javax.inject.Named;
 
 import dagger.Component;
 
-@ComponentTestScope
-@Component(dependencies = { AppComponent.class }, modules =  {ComponentTestModule.class})
-public interface ComponentTestComponent extends AppComponent {
-
+@AppScope
+@Component(
+        modules =  {
+            AppModule.class,
+            NetworkModule.class,
+            ComponentTestModule.class,
+            ServiceModule.class,
+            FeatureModule.class
+        }
+)
+public interface ComponentTestComponent extends AppComponent, ServiceComponent, FeatureComponent {
     @Named("component") Object componentObject();
-
-    @ComponentTestScope
-    ServiceComponent serviceComponent();
-
-    @ComponentTestScope
-    FeatureComponent featureComponent();
 }

@@ -9,7 +9,7 @@ import dagger.Provides;
 
 @Module
 public class ComponentTestModule {
-    @Provides @ComponentTestScope
+    @Provides @AppScope
     @Named("component") Object provideComponentObject(Application app) {
         return new Object();
     }

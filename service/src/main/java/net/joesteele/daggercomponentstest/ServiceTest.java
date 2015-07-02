@@ -27,7 +27,7 @@ public class ServiceTest extends Service {
     public void onCreate() {
         super.onCreate();
 
-        ServiceComponent component = ((ServiceComponentProvider)getApplication()).getServiceComponent();
+        ServiceComponent component = AppComponents.myAppComponent(this);
 
         component.inject(this);
 

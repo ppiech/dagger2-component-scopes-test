@@ -10,7 +10,7 @@ import dagger.Provides;
 @Module
 public class FeatureModule {
 
-    @Provides @AppScope FeatureTest getFeatureTest(@Named("app") String app) {
-        return new FeatureTest(app);
+    @Provides @AppScope FeatureTest getFeatureTest(@Named("app") String app, @Named("service") String service) {
+        return new FeatureTest(app, service);
     }
 }

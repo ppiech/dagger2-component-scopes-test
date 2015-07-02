@@ -99,9 +99,9 @@
     <orderEntry type="library" exported="" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-2.3.0" level="project" />
+    <orderEntry type="module" module-name="feature" exported="" />
     <orderEntry type="module" module-name="activity" exported="" />
     <orderEntry type="module" module-name="app" exported="" />
     <orderEntry type="module" module-name="service" exported="" />
-    <orderEntry type="module" module-name="feature" />
   </component>
 </module>

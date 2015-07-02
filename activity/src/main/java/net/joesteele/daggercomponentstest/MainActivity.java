@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         ActivityComponent component = DaggerActivityComponent.builder()
-                        .appComponent(((AppProvider) getApplicationContext()).appComponent()).build();
+                .appComponent(AppComponents.appComponent(this)).build();
 
         component.inject(this);
 

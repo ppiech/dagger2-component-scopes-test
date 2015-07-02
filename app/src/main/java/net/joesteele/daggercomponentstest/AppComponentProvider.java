@@ -1,5 +1,7 @@
 package net.joesteele.daggercomponentstest;
 
-public interface AppProvider {
+import android.content.Context;
+
+public interface AppComponentProvider {
     AppComponent appComponent();
 }
